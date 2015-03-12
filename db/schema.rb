@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312140023) do
+ActiveRecord::Schema.define(version: 20150312134210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,17 +26,12 @@ ActiveRecord::Schema.define(version: 20150312140023) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
-  create_table "images", force: :cascade do |t|
-    t.string   "url"
-    t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "images", ["post_id"], name: "index_images_on_post_id", using: :btree
-
   create_table "posts", force: :cascade do |t|
     t.string   "message"
+    t.string   "img1"
+    t.string   "img2"
+    t.integer  "vote1"
+    t.integer  "vote2"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,16 +45,5 @@ ActiveRecord::Schema.define(version: 20150312140023) do
     t.datetime "updated_at"
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.integer  "count"
-    t.integer  "image_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "votes", ["image_id"], name: "index_votes_on_image_id", using: :btree
-
   add_foreign_key "comments", "posts"
-  add_foreign_key "images", "posts"
-  add_foreign_key "votes", "images"
 end
