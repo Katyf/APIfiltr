@@ -6,6 +6,8 @@ RSpec.describe ImagesController do
 
     end
 
+    it '' do
+    end
 
 
   end
