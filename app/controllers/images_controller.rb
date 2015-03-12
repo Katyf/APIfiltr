@@ -11,12 +11,14 @@ before_action :set_post, only: [:show]
   end
 
   def show
-  render json: @image, status: :ok
+    @image = Image.find(params[:id])
+    render json: @image, status: :ok
   end
+
 
   private
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
   end
 
   def image_params
