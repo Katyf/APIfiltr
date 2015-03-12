@@ -4,7 +4,11 @@
 
 ## Photo sharing API for Project 2.
 
-Something here
+Goals:
+
+Image upload to (Amazon service)
+Nested comments
+Research
 
 ## Another Heading
 
