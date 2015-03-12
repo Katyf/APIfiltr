@@ -1,4 +1,4 @@
-class CommentSerializer < ActiveModel::Serializer
+class UserSerializer < ActiveModel::Serializer
   attributes :email, :username, :token
 
 end
