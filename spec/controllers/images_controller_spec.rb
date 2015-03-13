@@ -17,17 +17,18 @@ RSpec.describe ImagesController do
     end
     it 'renders the show template' do
       @post = Post.first
-      params = {post_id: post_id}
-      get :show, params
-      expect(response).to render_template('show')
+      # params = {post_id: post_id}
+      get :show, :id => @image.id, :post_id => @post.id
+      expect(response).to render_template("show")
     end
-
   end
 
   describe 'POST create' do
     it 'should create an image on that post' do
-      post
+      expect{
+        post :create, image: @image
+        }.to change(Image, :count).by 1
     end
   end
-
 end
+
