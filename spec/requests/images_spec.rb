@@ -30,4 +30,3 @@ describe 'Images API' do
     end
   end
 end
-
