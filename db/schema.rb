@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20150312140023) do
     t.string   "body"
     t.string   "user"
     t.integer  "post_id"
-    t.integer  "parentcomment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parentcomment_id"
   end
 
   add_index "comments", ["parentcomment_id"], name: "index_comments_on_parentcomment_id", using: :btree
