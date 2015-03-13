@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.string :body
       t.string :user
       t.belongs_to :post, index: true
+      t.references :parentcomment, index:
 
       t.timestamps
     end
