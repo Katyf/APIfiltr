@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-before_filter :authenticate, only: [:create]
+# before_filter :authenticate, only: [:create]
 
   def index
     if params[:post_id]
@@ -22,6 +22,11 @@ before_filter :authenticate, only: [:create]
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @comment = Comment.find(params[:id])
+    render json: @comment, status: 200
   end
 
 

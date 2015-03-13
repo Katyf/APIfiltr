@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "routes for images" do
-
   it 'routes to #show controller' do
     expect(get("/posts/1/images/2")).to route_to({
       controller: 'images',
@@ -10,5 +9,5 @@ RSpec.describe "routes for images" do
       id: '2'
       })
   end
-
 end
+
