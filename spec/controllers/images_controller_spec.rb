@@ -15,6 +15,13 @@ RSpec.describe ImagesController do
       get :show, :id => @image.id, :post_id => @post.id
       expect(response).to be_success
     end
+    it 'renders the show template' do
+      @post = Post.first
+      params = {post_id: post_id}
+      get :show, params
+      expect(response).to render_template('show')
+    end
+
   end
 
   describe 'POST create' do
