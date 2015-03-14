@@ -10,7 +10,6 @@ gem 'newrelic_rpm'
 gem 'rack-cors'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'nokogiri'
-gem 'aws-sdk'
 group :development, :test do
   gem 'capybara'
   gem 'rubocop'
