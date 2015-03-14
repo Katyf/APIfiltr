@@ -13,6 +13,10 @@ before_action :set_post, only: [:show]
   def show
     @image = Image.find(params[:id])
     render json: @image, status: :ok
+
+    # post = params[:id]
+    # images = FiltrClient.user_timeline(user_name).map(&:text)
+    # render json: { images: images }
   end
 
   def upvote

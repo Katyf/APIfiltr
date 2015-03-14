@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     post 'sign_in', on: :collection
   end
 
+  get 'amazon/sign_key'
 
 end
