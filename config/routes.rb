@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :create] do
     resources :comments, only: [:show, :create, :index]
-    resources :images, only: [:show, :create] do
+    resources :images, only: [:index, :show, :create] do
       member do
         post 'upvote'
       end
